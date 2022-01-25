@@ -1,0 +1,13 @@
+{
+  "name": "strapi-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"cd ./nextapp && next dev\" \"cd ./strapiapp && strapi develop\""
+  },
+  "author": "sbin0819 <sbinha123@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
