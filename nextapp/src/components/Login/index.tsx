@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '@graphql/queries';
+import { useCookies } from 'react-cookie';
 const mockLoginInfo = {
-  identifier: 'strapi',
-  password: 'strapi',
+  identifier: 'user1',
+  password: 'user1',
 };
 function Login() {
+  const [cookies, setCookie] = useCookies(['Authorization']);
   const [login, { data, loading, error }] = useMutation(LOGIN);
 
   const onHandleLogin = () => {
@@ -18,7 +20,9 @@ function Login() {
 
   useEffect(() => {
     if (data) {
-      console.log(data);
+      console.log('data', data);
+      const value = `${data.login.jwt}`;
+      setCookie('Authorization', value);
     }
   }, [data]);
 

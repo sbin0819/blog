@@ -13,9 +13,9 @@ function Signup() {
         onClick={() => {
           signup({
             variables: {
-              email: 'user5@gmail.com',
-              username: 'user5',
-              password: 'user5s',
+              email: 'user1@gmail.com',
+              username: 'user1',
+              password: 'user1',
             },
           });
         }}
