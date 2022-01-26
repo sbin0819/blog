@@ -1,11 +1,8 @@
 import React from 'react';
+import Home from '@components/Home';
 
 function index() {
-  return (
-    <div>
-      <h1>home</h1>
-    </div>
-  );
+  return <Home />;
 }
 
 export default index;

@@ -20,7 +20,9 @@
       "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"],
       "@graphql/*": ["src/graphql/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@common/*": ["src/components/common/*"],
+      "@common": ["src/components/common"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.tsx"],

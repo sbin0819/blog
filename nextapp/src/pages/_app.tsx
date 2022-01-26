@@ -5,12 +5,14 @@ import client from '@graphql/apollo-client';
 import GlobalStyle from '@styles/globalStyles';
 import { theme } from '@styles/theme';
 import { ThemeProvider } from 'styled-components';
+import { Header } from '@common';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </ApolloProvider>

@@ -7,10 +7,18 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
   }
-  /* Only using * omits pseudo elements so specifically include these  */
+  body {
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+    background: #272C35;
+    color: #eee;
+  }
   * , *:before, *:after {
     box-sizing: inherit;
   }
+   a {
+     text-decoration: none;
+     color: inherit;
+   }
 `;
 
 export default GlobalStyle;

@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '@graphql/queries';
 import { useCookies } from 'react-cookie';
+
+import { Header } from '@common';
+
 const mockLoginInfo = {
   identifier: 'user1',
   password: 'user1',
@@ -28,6 +31,7 @@ function Login() {
 
   return (
     <div>
+      <Header />
       <h1>login</h1>
       <button onClick={onHandleLogin}>login click</button>
     </div>
