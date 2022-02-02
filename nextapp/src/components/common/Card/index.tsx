@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Card 데이터
 // media query 로 사이즈 잡아주자
 const Container = styled.div`
   width: 300px;

@@ -13,8 +13,8 @@ function Login() {
   const [cookies, setCookie] = useCookies(['Authorization']);
   const [login, { data, loading, error }] = useMutation(LOGIN);
 
-  const onHandleLogin = () => {
-    login({
+  const onHandleLogin = async () => {
+    await login({
       variables: {
         ...mockLoginInfo,
       },
@@ -31,7 +31,6 @@ function Login() {
 
   return (
     <div>
-      <Header />
       <h1>login</h1>
       <button onClick={onHandleLogin}>login click</button>
     </div>
