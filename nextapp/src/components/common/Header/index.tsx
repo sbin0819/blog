@@ -30,7 +30,11 @@ function Header() {
       </div>
       <div className="right-menu">
         <AiOutlineSearch />
-        <Icon />
+        <Link href="/userid">
+          <a>
+            <Icon />
+          </a>
+        </Link>
       </div>
     </Container>
   );
