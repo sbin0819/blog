@@ -1,9 +1,8 @@
 import React from 'react';
+import User from '@components/User';
 
-// user id 에 해당하는 목록을 보여줌
-
-function user() {
-  return <div>user</div>;
+function UserPage() {
+  return <User />;
 }
 
-export default user;
+export default UserPage;
