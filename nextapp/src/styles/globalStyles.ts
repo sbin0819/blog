@@ -13,7 +13,8 @@ const GlobalStyle = createGlobalStyle`
     color: #eee;
   }
   * , *:before, *:after {
-    box-sizing: inherit;
+    /* box-sizing: inherit; */
+    box-sizing: border-box;
   }
    a {
      text-decoration: none;

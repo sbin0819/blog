@@ -15,7 +15,7 @@ function Posts() {
       <h1>posts</h1>
       {!loading && (
         <ul>
-          {data.posts.data.map((el: any) => (
+          {data?.posts?.data.map((el: any) => (
             <li key={el.id}>{el.attributes.title}</li>
           ))}
         </ul>

@@ -7,7 +7,7 @@ import { Header } from '@common';
 
 const mockLoginInfo = {
   identifier: 'user1',
-  password: 'user1',
+  password: 'gktmqls1',
 };
 function Login() {
   const [cookies, setCookie] = useCookies(['Authorization']);
