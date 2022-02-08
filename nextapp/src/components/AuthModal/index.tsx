@@ -37,6 +37,7 @@ function LoginModal({ onClose }: LoginModalProps) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<LoginForm>({
     mode: 'onBlur',
     defaultValues: {},
@@ -59,6 +60,7 @@ function LoginModal({ onClose }: LoginModalProps) {
         });
       } catch (error) {
         console.log(error);
+      } finally {
       }
     } else {
       try {
@@ -91,7 +93,10 @@ function LoginModal({ onClose }: LoginModalProps) {
       onClose();
     }
   }, [loginData]);
-
+  const handleAuth = (mode: 'login' | 'signup') => {
+    setAuthMode(mode);
+    reset();
+  };
   return (
     <Modal>
       <div ref={ref}>
@@ -116,12 +121,12 @@ function LoginModal({ onClose }: LoginModalProps) {
               {authMode === 'login' ? (
                 <p className="authmode_signup">
                   아직 회원이 아니신가요?{' '}
-                  <span onClick={() => setAuthMode('signup')}>회원가입</span>
+                  <span onClick={() => handleAuth('signup')}>회원가입</span>
                 </p>
               ) : (
                 <p className="authmode_login">
                   계정이 이미 있으신가요?
-                  <span onClick={() => setAuthMode('login')}>로그인</span>
+                  <span onClick={() => handleAuth('login')}>로그인</span>
                 </p>
               )}
             </AuthModeContainer>

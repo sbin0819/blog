@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Card } from '@common';
+import { useQuery } from '@apollo/client';
+import { GET_POSTS } from '@graphql/queries';
 
 const Container = styled.div`
-  margin: 80px 80px;
+  margin: 60px 15px;
 `;
 
 const CardListContainer = styled.div`
@@ -12,14 +14,16 @@ const CardListContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 `;
 
+// 24개씩 데이터 받기
 function Home() {
+  const { data, loading, error } = useQuery(GET_POSTS);
   return (
     <Container>
       <CardListContainer>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_, i) => (
+        {data?.posts?.data?.map((_: any, i: number) => (
           <Card key={i} />
         ))}
       </CardListContainer>

@@ -18,14 +18,29 @@
     "description": {
       "type": "string"
     },
-    "photoUrl": {
+    "imageUrl": {
       "type": "string"
     },
-    "users_permissions_user": {
+    "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "posts"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::like.like",
+      "mappedBy": "post"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "post"
     }
   }
 }

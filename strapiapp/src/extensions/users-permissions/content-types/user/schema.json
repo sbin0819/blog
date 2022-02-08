@@ -63,11 +63,20 @@
       "inversedBy": "users",
       "configurable": false
     },
+    "likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::like.like",
+      "mappedBy": "user"
+    },
     "posts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::post.post",
-      "mappedBy": "users_permissions_user"
+      "mappedBy": "user"
+    },
+    "icon": {
+      "type": "string"
     }
   }
 }
