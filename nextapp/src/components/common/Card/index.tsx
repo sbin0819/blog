@@ -5,12 +5,12 @@ import Image from 'next/image';
 // Card 데이터
 // media query 로 사이즈 잡아주자
 const Container = styled.div`
-  flex: 2 0 20%;
+  flex: 2 0 0;
   min-width: 320px;
   max-width: 330px;
   aspect-ratio: 16 / 17;
   max-height: 400px;
-  border: 1px solid #eee;
+  box-shadow: rgb(255 255 255 / 10%) 4px 4px 16px 8px;
   border-radius: 8px;
   .card_img {
     border-radius: 8px 8px 0 0;

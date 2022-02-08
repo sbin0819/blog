@@ -6,12 +6,13 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '@graphql/queries';
 
 const Container = styled.div`
-  margin: 60px 15px;
+  margin: 60px 4%;
 `;
 
 const CardListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: start; */
   justify-content: center;
   align-items: center;
   gap: 25px;
