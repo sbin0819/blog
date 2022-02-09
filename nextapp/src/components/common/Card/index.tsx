@@ -63,8 +63,9 @@ interface CardProps {
   title: string;
   description: string;
   imageUrl?: string;
+  username?: string;
 }
-function Card() {
+function Card({ title, description, username = 'sbinha' }: CardProps) {
   return (
     <Container>
       <div className="card_img">
@@ -73,10 +74,10 @@ function Card() {
       <ContentContainer>
         <div>
           <div>
-            <h4 className="title">벨로그에 다크 모드 적용하기</h4>
+            <h4 className="title">{title}</h4>
             <p className="description">
-              다크 모드는 2020년의 트렌드였고, 2022년인 지금, 너무나도
-              당연해져서 없으면 사용자가 많이 불편해 하죠. 다크 모드는
+              {description} 다크 모드는 2020년의 트렌드였고, 2022년인 지금,
+              너무나도 당연해져서 없으면 사용자가 많이 불편해 하죠. 다크 모드는
               벨로그에도 정말 필요했는데요, 미루고 미루다가 드디어 이번 설날
               연휴를 맞이하여 이를 적용해보려고 합니다.
             </p>
@@ -87,7 +88,7 @@ function Card() {
           </div>
         </div>
         <Footer>
-          <div>by velopert</div>
+          <div>by {username}</div>
           <div>heart 100</div>
         </Footer>
       </ContentContainer>

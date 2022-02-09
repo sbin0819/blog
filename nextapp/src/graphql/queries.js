@@ -31,8 +31,17 @@ export const GET_POSTS = gql`
         id
         attributes {
           title
+          summary
+          imageUrl
           description
           createdAt
+          user {
+            data {
+              attributes {
+                username
+              }
+            }
+          }
         }
       }
     }

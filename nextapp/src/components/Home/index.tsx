@@ -6,13 +6,13 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '@graphql/queries';
 
 const Container = styled.div`
-  margin: 60px 4%;
+  margin: 60px 10%;
 `;
 
 const CardListContainer = styled.div`
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: start; */
   justify-content: center;
   align-items: center;
   gap: 25px;
@@ -24,8 +24,12 @@ function Home() {
   return (
     <Container>
       <CardListContainer>
-        {data?.posts?.data?.map((_: any, i: number) => (
-          <Card key={i} />
+        {data?.posts?.data?.map((data: any, i: number) => (
+          <Card
+            key={i}
+            {...data.attributes}
+            username={data.attributes.user?.data?.attributes?.username}
+          />
         ))}
       </CardListContainer>
     </Container>
