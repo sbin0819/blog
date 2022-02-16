@@ -48,6 +48,30 @@ export const GET_POSTS = gql`
   }
 `;
 
+export const GET_FILTERED_POSTS_BY_USER = gql`
+query getFiteredPosts{
+   posts(filters:{user: {username:{contains:"user3"}}}, pagination:{page:1, pageSize:24}, sort: ["createdAt:desc"]) {
+      data {
+        attributes {
+          title
+          description
+          createdAt
+          imageUrl
+          publishedAt
+          summary
+          user {
+            data {
+              attributes {
+                username
+              }
+            }
+          }
+        }
+      }
+    }
+}
+`
+
 export const GET_CHARECTER = gql`
   query getCharecter($id: ID!) {
     character(id: $id) {
