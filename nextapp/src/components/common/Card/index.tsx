@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // Card 데이터
 // media query 로 사이즈 잡아주자
 const Container = styled.div`
-  flex: 2 0 0;
-  min-width: 320px;
-  max-width: 330px;
+  width: 320px;
   aspect-ratio: 16 / 17;
-  max-height: 400px;
   box-shadow: rgb(255 255 255 / 10%) 4px 4px 16px 8px;
   border-radius: 8px;
+  cursor: pointer;
   .card_img {
     border-radius: 8px 8px 0 0;
     height: 50%;
@@ -20,12 +19,15 @@ const Container = styled.div`
       width: 100%;
     }
   }
+  @media screen and (max-width: 1010px) {
+    flex: 2 0 320px;
+  }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 55%;
+  height: 60%;
   padding: 18px 20px;
   .title {
     font-size: 1rem;
@@ -43,7 +45,6 @@ const ContentContainer = styled.div`
     overflow-wrap: break-word;
     font-size: 0.875rem;
     line-height: 1.5;
-    height: 3.9375rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -66,8 +67,9 @@ interface CardProps {
   username?: string;
 }
 function Card({ title, description, username = 'sbinha' }: CardProps) {
+  const router = useRouter();
   return (
-    <Container>
+    <Container onClick={() => router.push(`/${username}/${title}`)}>
       <div className="card_img">
         <img src="/img/cardBg.jpg" />
       </div>

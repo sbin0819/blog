@@ -26,7 +26,7 @@ export const SIGNUP = gql`
 
 export const GET_POSTS = gql`
   query getPosts {
-    posts {
+    posts(pagination:{page:1, pageSize:8},sort: "createdAt:desc") {
       data {
         id
         attributes {

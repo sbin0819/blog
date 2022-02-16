@@ -6,16 +6,30 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '@graphql/queries';
 
 const Container = styled.div`
-  margin: 60px 10%;
+  width: 1360px;
+  margin: 40px auto 60px;
+  @media screen and (min-width: 1950px) {
+    width: 1720px;
+  }
+  @media screen and (max-width: 1620px) {
+    width: 1000px;
+  }
+  @media screen and (max-width: 1010px) {
+    width: 100%;
+    padding: 0 30px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    padding: 0 10px;
+  }
 `;
 
 const CardListContainer = styled.div`
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 `;
 
 // 24개씩 데이터 받기
@@ -24,13 +38,15 @@ function Home() {
   return (
     <Container>
       <CardListContainer>
-        {data?.posts?.data?.map((data: any, i: number) => (
-          <Card
-            key={i}
-            {...data.attributes}
-            username={data.attributes.user?.data?.attributes?.username}
-          />
-        ))}
+        {data?.posts?.data?.map((data: any, i: number) => {
+          return (
+            <Card
+              key={i}
+              {...data.attributes}
+              username={data.attributes.user?.data?.attributes?.username}
+            />
+          );
+        })}
       </CardListContainer>
     </Container>
   );

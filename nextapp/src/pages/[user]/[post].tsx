@@ -1,7 +1,8 @@
-import React from 'react';
-
+import { useRouter } from 'next/router';
 function post() {
-  return <div>post</div>;
+  // api user 없으면 redirect
+  const { query } = useRouter();
+  return <div>{query.post}</div>;
 }
 
 export default post;
