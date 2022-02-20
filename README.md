@@ -1,5 +1,5 @@
 # More Info
-- [Notion](https://www.notion.so/Blog-next-strapi-Graphql-1565724534904b1ea2d1f7c5bc2fc70b)
+- [Notion](https://www.notion.so/Blog-d098d6cc7d004448b3c0da96a6badf10)
 
 # Contributor
 - @sbin0819
