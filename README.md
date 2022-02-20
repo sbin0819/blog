@@ -1,3 +1,6 @@
+# More Info
+- [Notion](https://github.com/sbin0819/blog)
+
 # Contributor
 - @sbin0819
 
